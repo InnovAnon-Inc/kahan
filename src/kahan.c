@@ -56,6 +56,9 @@ void update_kahan (kahan_t *restrict kahan, double input) {
 #endif
 }
 
+__attribute__ ((const, leaf, nonnull (1), nothrow))
+void finish_kahan (kahan_t *restrict kahan) { /* do nothing */ }
+
 __attribute__ ((const, nonnull (1), nothrow, warn_unused_result))
 double ez_kahan (
    double const vals[], size_t nval) {
@@ -80,5 +83,6 @@ double ez_kahan (
       printf ("sum[%d]:%g\n", (int) i, vals[i]); fflush (stdout);
 #endif
    }
+   finish_kahan (&k);
    return k.sum;
 }
