@@ -15,11 +15,6 @@
 
 #include <kahan.h>
 
-typedef struct {
-   double sum;
-   double c;
-} kahan_t;
-
 __attribute__ ((nonnull (1), nothrow))
 void init_kahan (kahan_t *restrict kahan) {
 	#pragma GCC diagnostic push
