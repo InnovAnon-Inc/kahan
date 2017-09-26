@@ -64,11 +64,12 @@ double ez_kahan (
 #ifndef NDEBUG
       printf ("nval:%d\n", (int) nval); fflush (stdout);
 #endif
-   if (nval == 0)
+   if (nval == 0) {
 	#pragma GCC diagnostic push
 	#pragma GCC diagnostic ignored "-Wunsuffixed-float-constants"
       return 0.0;
 	#pragma GCC diagnostic pop
+   }
    init_kahan2 (&k, vals[0]);
 #ifndef NDEBUG
       printf ("sum[0]:%g\n", vals[0]); fflush (stdout);
