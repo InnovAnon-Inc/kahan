@@ -24,7 +24,7 @@ int main (void) {
    time_t t;
 
    t = time (NULL);
-   srand ((int) t);
+   srand ((unsigned int) t);
 
    for (k = 0; k != ARRSZ (vals); k++) {
       int num, dem;
