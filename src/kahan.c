@@ -37,9 +37,9 @@ void update_kahan (kahan_t *restrict kahan, double input) {
    double y = input - kahan->c; /* So far, so good: c is zero. */
    double t = kahan->sum + y; /* Alas, sum is big, y small, so low-order
                                 * digits of y are lost. */
-   kahan->c = (t - sum) - y; /* (t - sum) cancels the high-order part of y;
-                              * subtracting y recovers negative
-                              * (low part of y) */
+   kahan->c = (t - kahan->sum) - y; /* (t - sum) cancels the high-order part
+                                     * of y; subtracting y recovers negative
+                                     * (low part of y) */
    kahan->sum = t; /* Algebraically, c should always be zero. Beware
                     * overly-aggressive optimizing compilers! */
    /* Next time around, the lost low part will be added to y in a fresh
