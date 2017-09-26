@@ -1,5 +1,5 @@
-#ifndef _KAHAN_H_
-#define _KAHAN_H_
+#ifndef _NEUMAIER_H_
+#define _NEUMAIER_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,18 +12,21 @@ extern "C" {
 typedef struct {
    double sum;
    double c; /* A running compensation for lost low-order bits. */
-} kahan_t;
+} neumaier_t;
 
-void init_kahan (kahan_t *restrict kahan)
+void init_neumaier (neumaier_t *restrict neumaier)
 __attribute__ ((nonnull (1), nothrow)) ;
 
-void init_kahan2 (kahan_t *restrict kahan, double initial)
+void init_neumaier2 (neumaier_t *restrict neumaier, double initial)
 __attribute__ ((leaf, nonnull (1), nothrow)) ;
 
-void update_kahan (kahan_t *restrict kahan, double input)
+void update_neumaier (neumaier_t *restrict neumaier, double input)
 __attribute__ ((leaf, nonnull (1), nothrow)) ;
 
-double ez_kahan (
+void finish_neumaier (neumaier_t *restrict neumaier)
+__attribute__ ((leaf, nonnull (1), nothrow)) ;
+
+double ez_neumaier (
    double const vals[], size_t nval)
 __attribute__ ((const, nonnull (1), nothrow, warn_unused_result)) ;
 
@@ -31,4 +34,4 @@ __attribute__ ((const, nonnull (1), nothrow, warn_unused_result)) ;
 }
 #endif
 
-#endif /* _KAHAN_H_ */
+#endif /* _NEUMAIER_H_ */
