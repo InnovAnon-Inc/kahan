@@ -76,7 +76,7 @@ double ez_kahan (
    for (i = 1; i != nval; i++) {
       update_kahan (&k, vals[i]);
 #ifndef NDEBUG
-      printf ("sum[%i]:%g\n", (int) i, vals[i]); fflush (stdout);
+      printf ("sum[%d]:%g\n", (int) i, vals[i]); fflush (stdout);
 #endif
    }
    return k.sum;
