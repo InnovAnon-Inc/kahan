@@ -71,12 +71,12 @@ double ez_kahan (
 	#pragma GCC diagnostic pop
    init_kahan2 (&k, vals[0]);
 #ifndef NDEBUG
-      printf ("sum[0]:%g\n", vals[k]); fflush (stdout);
+      printf ("sum[0]:%g\n", vals[0]); fflush (stdout);
 #endif
    for (i = 1; i != nval; i++) {
       update_kahan (&k, vals[i]);
 #ifndef NDEBUG
-      printf ("sum[%i]:%g\n", (int) i, vals[k]); fflush (stdout);
+      printf ("sum[%i]:%g\n", (int) i, vals[i]); fflush (stdout);
 #endif
    }
    return k.sum;
