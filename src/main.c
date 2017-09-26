@@ -38,7 +38,7 @@ int main (void) {
    }
 
 #ifndef NDEBUG
-      printf ("ARRSZ(vals):%d\n", (int) ARRSZ (vals)); fflush (stdout);
+   printf ("ARRSZ(vals):%d\n", (int) ARRSZ (vals)); fflush (stdout);
 #endif
 
    sum = ez_kahan (vals, ARRSZ (vals));
