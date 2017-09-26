@@ -16,7 +16,9 @@ libneumaier_la_SOURCES = neumaier.c
 libneumaier_la_LIBADD = -lm
 include_HEADERS += neumaier.h
 bin_PROGRAMS += neumaier
-neumaier_SOURCES = numaier-test.c
+neumaier_SOURCES = neumaier-test.c
 neumaier_LDADD = libneumaier.la -lm
+
+# TODO parallel pairwise summation with FFT and neumaier
 
 AM_CPPFLAGS = -D__STDC_INT64__
