@@ -17,7 +17,6 @@
 
 __attribute__ ((nothrow, warn_unused_result))
 int main (void) {
-   kahan_t kahan;
    double vals[10];
    double sum;
    size_t k;
