@@ -17,6 +17,6 @@ libneumaier_la_LIBADD = -lm
 include_HEADERS += neumaier.h
 bin_PROGRAMS += neumaier
 neumaier_SOURCES = numaier-test.c
-numaier_LDADD = libneumaier.la -lm
+neumaier_LDADD = libneumaier.la -lm
 
 AM_CPPFLAGS = -D__STDC_INT64__
