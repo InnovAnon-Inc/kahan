@@ -34,7 +34,7 @@ void init_kahan2 (kahan_t *restrict kahan, double initial) {
 
 __attribute__ ((leaf, nonnull (1), nothrow))
 void update_kahan (kahan_t *restrict kahan, double input) {
-   double y = input - c; /* So far, so good: c is zero. */
+   double y = input - kahan->c; /* So far, so good: c is zero. */
    double t = kahan->sum + y; /* Alas, sum is big, y small, so low-order
                                 * digits of y are lost. */
    kahan->c = (t - sum) - y; /* (t - sum) cancels the high-order part of y;
