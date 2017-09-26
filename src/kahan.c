@@ -52,6 +52,7 @@ void update_kahan (kahan_t *restrict kahan, double input) {
 #ifndef NDEBUG
    printf ("sum  :%g\n", kahan->sum); fflush (stdout);
    printf ("c    :%g\n", kahan->c);   fflush (stdout);
+   puts (""); fflush (stdout);
 #endif
 }
 

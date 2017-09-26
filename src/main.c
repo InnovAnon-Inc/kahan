@@ -5,7 +5,7 @@
 #define _POSIX_C_SOURCE 200112L
 #define __STDC_VERSION__ 200112L
 
-#define NDEBUG 1
+/*#define NDEBUG 1*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,7 +32,14 @@ int main (void) {
       /*while_check (dem == 0);*/
       while (dem == 0); /* let the PGO tune this */
       vals[k] = (double) num / (double) dem;
+#ifndef NDEBUG
+      printf ("vals[%d]:%g\n", (int) k, vals[k]); fflush (stdout);
+#endif
    }
+
+#ifndef NDEBUG
+      printf ("ARRSZ(vals):%d\n", (int) ARRSZ (vals)); fflush (stdout);
+#endif
 
    sum = ez_kahan (vals, ARRSZ (vals));
 
