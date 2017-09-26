@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <unistd.h>
 
 #include <kahan.h>
@@ -20,8 +21,11 @@ int main (void) {
    double vals[10];
    double sum;
    size_t k;
+   time_t t;
 
-   srand (time (NULL));
+   t = time (NULL);
+   srand ((int) t);
+
    for (k = 0; k != ARRSZ (vals); k++) {
       int num, dem;
       num = rand ();
@@ -30,7 +34,8 @@ int main (void) {
       while (dem == 0); /* let the PGO tune this */
       vals[k] = (double) num / (double) dem;
    }
-   sum = ez_kahan (vals, ARRSZ (vals);
+
+   sum = ez_kahan (vals, ARRSZ (vals));
 
    (void) printf ("sum:%g\n", sum);
 
