@@ -11,12 +11,12 @@ AC_CONFIG_FILES([
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SUBDIRS([glitter])
 
-AC_CHECK_HEADERS([stdlib.h])
+AC_CHECK_HEADERS([stdlib.h sys/types.h])
 AC_CHECK_HEADERS([math.h])
 AC_CHECK_HEADERS([glitter.h])
 
 #AC_CHECK_LIB([stdlib],[])
-#AC_CHECK_LIB([math],[])
+AC_CHECK_LIB([math],[fabs])
 
 INNOVANON_WARNINGS([])
 

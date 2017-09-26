@@ -13,11 +13,10 @@ kahan_LDADD = libkahan.la
 
 lib_LTLIBRARIES += libneumaier.la
 libneumaier_la_SOURCES = neumaier.c
-#libneumaier_la_LIBADD = -lm
+libneumaier_la_LIBADD = -lm
 include_HEADERS += neumaier.h
 bin_PROGRAMS += neumaier
 neumaier_SOURCES = numaier-test.c
-#numaier_LDADD = libneumaier.la -lm
-neumaier_LDADD = libneumaier.la
+numaier_LDADD = libneumaier.la -lm
 
 AM_CPPFLAGS = -D__STDC_INT64__

@@ -11,7 +11,7 @@
 #include <stdio.h>
 #endif
 
-/*#include <math.h>*/
+#include <math.h>
 
 #include <neumaier.h>
 
