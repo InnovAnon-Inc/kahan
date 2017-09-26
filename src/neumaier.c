@@ -77,5 +77,5 @@ double ez_neumaier (
 #endif
    }
    finish_neumaier (&n);
-   return k.sum;
+   return n.sum;
 }
