@@ -22,4 +22,4 @@ neumaier_LDADD = libneumaier.la -lm
 # TODO parallel pairwise summation with FFT and neumaier
 
 AM_CPPFLAGS = -D__STDC_INT64__
-AM_CPPFLAGS += -I $(srcdir)/glitter/src
+AM_CPPFLAGS += -I $(srcdir)/../glitter/src
