@@ -1,3 +1,8 @@
+AM_CPPFLAGS = -D__STDC_INT64__
+
+SUBDIRS = ../glitter
+AM_CPPFLAGS += -I ../glitter/src
+
 lib_LTLIBRARIES =
 include_HEADERS =
 bin_PROGRAMS    =
@@ -20,8 +25,3 @@ bin_PROGRAMS += neumaier-test
 neumaier_test_LDADD = libneumaier.la $(LIBNEUMAIER_LIBADD)
 
 # TODO parallel pairwise summation with FFT and neumaier
-
-AM_CPPFLAGS = -D__STDC_INT64__
-
-SUBDIRS = ../glitter
-AM_CPPFLAGS += -I ../glitter/src
