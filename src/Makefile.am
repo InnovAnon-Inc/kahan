@@ -7,15 +7,13 @@ lib_LTLIBRARIES =
 include_HEADERS =
 bin_PROGRAMS    =
 
-LIBKAHAN_LIBADD =
+include Makefile-LIBADD.inc
 
 lib_LTLIBRARIES += libkahan.la
 libkahan_la_LIBADD = $(LIBKAHAN_LIBADD)
 include_HEADERS += kahan.h
 bin_PROGRAMS += kahan-test
 kahan_test_LDADD = libkahan.la $(LIBKAHAN_LIBADD)
-
-LIBNEUMAIER_LIBADD = -lm
 
 lib_LTLIBRARIES += libneumaier.la
 libneumaier_la_SOURCES = neumaier.c
