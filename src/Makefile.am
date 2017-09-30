@@ -16,7 +16,6 @@ bin_PROGRAMS += kahan-test
 kahan_test_LDADD = libkahan.la $(LIBKAHAN_LIBADD)
 
 lib_LTLIBRARIES += libneumaier.la
-libneumaier_la_SOURCES = neumaier.c
 libneumaier_la_LIBADD = $(LIBNEUMAIER_LIBADD)
 include_HEADERS += neumaier.h
 bin_PROGRAMS += neumaier-test
