@@ -24,7 +24,7 @@ void update_kahan (kahan_t *restrict kahan, double input)
 __attribute__ ((leaf, nonnull (1), nothrow)) ;
 
 void finish_kahan (kahan_t *restrict kahan)
-__attribute__ ((const, leaf, nonnull (1), nothrow)) ;
+__attribute__ ((leaf, nonnull (1), nothrow, pure)) ;
 
 double ez_kahan (
    double const vals[], size_t nval)
