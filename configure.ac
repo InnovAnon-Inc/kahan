@@ -24,6 +24,18 @@ AC_CHECK_HEADERS([glitter.h])
 #AC_CHECK_LIB([stdlib],[])
 AC_CHECK_LIB([math],[fabs])
 
+LIBKAHAN_LIBADD="`PATH=src:$PATH libkahan_config --libs`"
+AC_SUBST(LIBKAHAN_LIBADD)
+
+LIBNEUMAIER_LIBADD="`PATH=src:$PATH libneumaier_config --libs`"
+AC_SUBST(LIBNEUMAIER_LIBADD)
+
+KAHAN_TEST_LIBADD="libkahan.la `PATH=src:$PATH kahan_test_config --libs`"
+AC_SUBST(KAHAN_TEST_LIBADD)
+
+NEUMAIER_TEST_LIBADD="libneumaier.la `PATH=src:$PATH neumaier_test_config --libs`"
+AC_SUBST(NEUMAIER_TEST_LIBADD)
+
 INNOVANON_WARNINGS([])
 
 AC_OUTPUT
