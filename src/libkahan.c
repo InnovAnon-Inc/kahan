@@ -56,7 +56,7 @@ void update_kahan (kahan_t *restrict kahan, double input) {
 #endif
 }
 
-__attribute__ ((leaf, nonnull (1), nothrow, pure))
+__attribute__ ((leaf, nonnull (1), nothrow))
 void finish_kahan (kahan_t *restrict kahan) { /* do nothing */ }
 
 __attribute__ ((const, nonnull (1), nothrow, warn_unused_result))
