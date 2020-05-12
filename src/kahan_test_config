@@ -2,5 +2,6 @@
 set -eu
 [ $# -eq 1 ]
 [ $1 == --libs ]
-libkahan_config --libs
+#libkahan_config --libs
+echo -lkahan `libkahan_config --libs`
 

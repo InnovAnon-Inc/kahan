@@ -2,5 +2,5 @@
 set -eu
 [ $# -eq 1 ]
 [ $1 == --libs ]
-libneumaier_config --libs
-
+#libneumaier_config --libs
+echo -lm
