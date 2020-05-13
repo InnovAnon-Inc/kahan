@@ -24,19 +24,23 @@ AC_CHECK_HEADERS([glitter.h])
 #AC_CHECK_LIB([stdlib],[])
 AC_CHECK_LIB([math],[fabs])
 
-srcdir = @srcdir@
-LIBKAHAN_LIBADD="`PATH=$(srcdir)src:$PATH libkahan_config --libs`"
+#srcdir = @srcdir@
+#LIBKAHAN_LIBADD="`PATH=$(srcdir)src:$PATH libkahan_config --libs`"
+LIBKAHAN_LIBADD="`PATH=src:$PATH libkahan_config --libs`"
 AC_SUBST(LIBKAHAN_LIBADD)
 
-LIBNEUMAIER_LIBADD="`PATH=$(srcdir)src:$PATH libneumaier_config --libs`"
+#LIBNEUMAIER_LIBADD="`PATH=$(srcdir)src:$PATH libneumaier_config --libs`"
+LIBNEUMAIER_LIBADD="`PATH=src:$PATH libneumaier_config --libs`"
 AC_SUBST(LIBNEUMAIER_LIBADD)
 
 #KAHAN_TEST_LIBADD="libkahan.la `PATH=src:$PATH kahan_test_config --libs`"
-KAHAN_TEST_LIBADD="`PATH=$(srcdir)src:$PATH kahan_test_config --libs`"
+#KAHAN_TEST_LIBADD="`PATH=$(srcdir)src:$PATH kahan_test_config --libs`"
+KAHAN_TEST_LIBADD="`PATH=src:$PATH kahan_test_config --libs`"
 AC_SUBST(KAHAN_TEST_LIBADD)
 
 #NEUMAIER_TEST_LIBADD="libneumaier.la `PATH=src:$PATH neumaier_test_config --libs`"
-NEUMAIER_TEST_LIBADD="`PATH=$(srcdir)src:$PATH neumaier_test_config --libs`"
+#NEUMAIER_TEST_LIBADD="`PATH=$(srcdir)src:$PATH neumaier_test_config --libs`"
+NEUMAIER_TEST_LIBADD="`PATH=src:$PATH neumaier_test_config --libs`"
 AC_SUBST(NEUMAIER_TEST_LIBADD)
 
 INNOVANON_WARNINGS([])
