@@ -16,12 +16,14 @@ EXTRA_kahan_test_DEPENDENCIES = libkahan.la
 
 lib_LTLIBRARIES += libneumaier.la
 libneumaier_la_CPPFLAGS = $(GLITTER_CFLAGS)
-libneumaier_la_LIBADD   = $(GLITTER_LIBS) -lm
+#libneumaier_la_LIBADD   = $(GLITTER_LIBS) -lm
+libneumaier_la_LIBADD   = $(GLITTER_LIBS)
 include_HEADERS += neumaier.h
 
 bin_PROGRAMS += neumaier-test
 neumaier_test_CPPFLAGS =            $(GLITTER_CFLAGS)
-neumaier_test_LDADD    = -lneumaier $(GLITTER_LIBS) -lm
+#neumaier_test_LDADD    = -lneumaier $(GLITTER_LIBS) -lm
+neumaier_test_LDADD    = -lneumaier $(GLITTER_LIBS)
 EXTRA_neumaier_test_DEPENDENCIES = libneumaier.la
 
 # TODO parallel pairwise summation with FFT and neumaier

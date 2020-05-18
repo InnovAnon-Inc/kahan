@@ -12,4 +12,6 @@ Libs: -L${libdir} -lneumaier
 Cflags: -I${includedir}
 Requires: glitter
 Requires.private:
+#Libs.private: -lm
+Libs.private: @M_CFLAGS@ @M_LIBS@
 

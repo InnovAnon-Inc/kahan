@@ -27,7 +27,8 @@ AC_CHECK_HEADERS([math.h])
 #AC_CHECK_HEADERS([glitter.h])
 
 #AC_CHECK_LIB([stdlib],[])
-AC_CHECK_LIB([math],[fabs])
+#AC_CHECK_LIB([math],[fabs])
+AC_CHECK_LIB([m],[fabs])
 
 PKG_CHECK_MODULES([GLITTER],[glitter],,)
 
