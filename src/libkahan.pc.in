@@ -1,0 +1,15 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+#kahan_utility=kahan-test
+
+Name: @PACKAGE_NAME@
+Description: kahan library
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lkahan
+Cflags: -I${includedir}
+Requires: glitter
+Requires.private:
+

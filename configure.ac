@@ -8,40 +8,28 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
  Makefile
  src/Makefile
+ src/libkahan.pc
+ src/libneumaier.pc
+ src/kahan-test.pc
+ src/neumaier.pc
 ])
+
+PKG_PROG_PKG_CONFIG
 
 AC_ARG_ENABLE([use-submodules],
     AS_HELP_STRING([--enable-use-submodules], [Enable use submodules]))
 AM_CONDITIONAL([USE_SUBMODULES], [test x"$enable_use_submodules" = "xyes"])
 
 AC_CONFIG_MACRO_DIR([m4])
-#AC_CONFIG_SUBDIRS([glitter])
 
 AC_CHECK_HEADERS([stdlib.h sys/types.h])
 AC_CHECK_HEADERS([math.h])
-AC_CHECK_HEADERS([glitter.h])
+#AC_CHECK_HEADERS([glitter.h])
 
 #AC_CHECK_LIB([stdlib],[])
 AC_CHECK_LIB([math],[fabs])
 
-#srcdir = @srcdir@
-#LIBKAHAN_LIBADD="`PATH=$(srcdir)src:$PATH libkahan_config --libs`"
-LIBKAHAN_LIBADD="`PATH=src:$PATH libkahan_config --libs`"
-AC_SUBST(LIBKAHAN_LIBADD)
-
-#LIBNEUMAIER_LIBADD="`PATH=$(srcdir)src:$PATH libneumaier_config --libs`"
-LIBNEUMAIER_LIBADD="`PATH=src:$PATH libneumaier_config --libs`"
-AC_SUBST(LIBNEUMAIER_LIBADD)
-
-#KAHAN_TEST_LIBADD="libkahan.la `PATH=src:$PATH kahan_test_config --libs`"
-#KAHAN_TEST_LIBADD="`PATH=$(srcdir)src:$PATH kahan_test_config --libs`"
-KAHAN_TEST_LIBADD="`PATH=src:$PATH kahan_test_config --libs`"
-AC_SUBST(KAHAN_TEST_LIBADD)
-
-#NEUMAIER_TEST_LIBADD="libneumaier.la `PATH=src:$PATH neumaier_test_config --libs`"
-#NEUMAIER_TEST_LIBADD="`PATH=$(srcdir)src:$PATH neumaier_test_config --libs`"
-NEUMAIER_TEST_LIBADD="`PATH=src:$PATH neumaier_test_config --libs`"
-AC_SUBST(NEUMAIER_TEST_LIBADD)
+PKG_CHECK_MODULES([GLITTER],[glitter],,)
 
 INNOVANON_WARNINGS([])
 
