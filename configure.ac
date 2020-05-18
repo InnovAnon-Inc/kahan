@@ -11,7 +11,7 @@ AC_CONFIG_FILES([
  src/libkahan.pc
  src/libneumaier.pc
  src/kahan-test.pc
- src/neumaier.pc
+ src/neumaier-test.pc
 ])
 
 PKG_PROG_PKG_CONFIG
@@ -34,3 +34,4 @@ PKG_CHECK_MODULES([GLITTER],[glitter],,)
 INNOVANON_WARNINGS([])
 
 AC_OUTPUT
+
