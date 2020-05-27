@@ -1,6 +1,7 @@
 # kahan
 Kahan's Compensated Summation Algorithm for floats (C Library)
 ==========
+
 Add 4X the operations to your already-slow floating-point computations
 
 [![CircleCI](https://img.shields.io/circleci/build/github/InnovAnon-Inc/kahan?color=%23FF1100&logo=InnovAnon%2C%20Inc.&logoColor=%23FF1133&style=plastic)](https://circleci.com/gh/InnovAnon-Inc/kahan)
